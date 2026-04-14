@@ -1,0 +1,9 @@
+{
+  "name": "go-demo-6",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Node metadata for CI utilities in go-demo-6",
+  "scripts": {
+    "test": "npx --yes jest --coverage"
+  }
+}
