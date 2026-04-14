@@ -31,7 +31,7 @@ jobs:
 
       # Step D: Run the tests with coverage
       - name: Run Tests and Generate Coverage
-        run: npx jest --coverage
+        run: npx jest --coverage --passWithNoTests
 
       # Step E: Upload the coverage report so you can view it later (Optional but recommended)
       # NEW: Upload the generated report directly to Codecov

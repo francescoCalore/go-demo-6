@@ -4,6 +4,6 @@
   "private": true,
   "description": "Node metadata for CI utilities in go-demo-6",
   "scripts": {
-    "test": "npx jest --coverage"
+    "test": "npx --yes jest --coverage"
   }
 }
