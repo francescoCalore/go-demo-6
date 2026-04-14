@@ -1,0 +1,33 @@
+apiVersion: flagger.app/v1beta1
+kind: Canary
+metadata:
+  name: jx-go-demo-6
+  namespace: jx-staging
+spec:
+  provider: istio
+  targetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: jx-go-demo-6
+  progressDeadlineSeconds: 300
+  service:
+    port: 80
+    targetPort: 8080
+    gateways:
+      - mesh
+    hosts:
+      - "*"
+  analysis:
+    interval: 30s
+    threshold: 5
+    maxWeight: 50
+    stepWeight: 10
+    metrics:
+      - name: request-success-rate
+        thresholdRange:
+          min: 99
+        interval: 30s
+      - name: request-duration
+        thresholdRange:
+          max: 500
+        interval: 30s
